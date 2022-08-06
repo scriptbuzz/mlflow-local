@@ -4,9 +4,9 @@
 ## By Michael Bitar
 
 
-This is a getting started guide to help deploy MLflow locally. 
+This is a getting started guide to help deploy MLflow locally on a Macbook. 
 
-If you are a machine learning developer like me, you typically spend most of your time experimenting with parameters and code on your local workstation using your favorite IDE or Jupyter Notebook. In the past, I would use a spreadsheet to track my ML experiments. That was not fun.  
+If you are a machine learning developer like me, you typically spend most of your time experimenting with parameters and code on your local workstation using your favorite IDE or Jupyter Notebooks. In the past, I would use a spreadsheet to track my ML experiments. That was not fun.
 
 The ML stack was begging for a toolchain that can bring DevOps-like functionality to ML development.  This led to the rise of tools referred to loosely as MLOps tools. One of those tools that's gaining traction is MLflow.
 
@@ -16,7 +16,7 @@ MLflow can be deployed in many configurations. If you are developing locally mos
 
 In this guide I will walk you thru how I deployed MLflow on my local macbook. Later, I will publish guides on more advanced setups such as using a cloud-hosted resources to support team collaboration and for higher availability, scalability, and security. 
 
-LET'S GET STARTED!
+LET'S GET STARTED! You can use this Jupyter Notebook as your starting point. Make sure you have access to the internet. 
 
 
 
@@ -74,7 +74,7 @@ LET'S GET STARTED!
 
 
 ```python
-# Import support libraries 
+# Import needed support libraries 
 
 import os
 import warnings
@@ -102,7 +102,7 @@ logger = logging.getLogger(__name__)
 
 
 ```python
-# define evaluation metrics. In this case rmse, mae, r2 scores
+# define evaluation metrics. In this case I will select RMSE, MAE, R2 scores
 
 def eval_metrics(actual, pred):
     rmse = np.sqrt(mean_squared_error(actual, pred))
@@ -120,7 +120,7 @@ warnings.filterwarnings("ignore")
 
 np.random.seed(40)
 
-# Read the samle dataset csv file from the URL
+# Load the sample dataset csv file from this URL
 csv_url = (
     "http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv"
 )
@@ -131,10 +131,11 @@ except Exception as e:
         "Unable to download training & test CSV, check your internet connection. Error: %s", e
     )
     
-# Split the data into training and test sets. (0.75, 0.25) split.
+# Split the data into training and test sets using (0.75, 0.25) split.
 train, test = train_test_split(data)
 
 # The predicted column is "quality" which is a scalar from [3, 9]
+
 train_x = train.drop(["quality"], axis=1)
 test_x = test.drop(["quality"], axis=1)
 train_y = train[["quality"]]
@@ -145,13 +146,15 @@ test_y = test[["quality"]]
 
 
 ```python
-# Run this code cell multiple times each with a different alpha and l1_ratio numbers using 
-# values between 0 and 1. 
+# Run below code cell multiple times each with a different alpha and l1_ratio numbers using 
+# values between 0 and 1. Each run will be tracked and listed in the MLflow dashboard.
+# We will be usng the ElasticNet model in this example. 
 
 # ElasticNet link: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html
 
-alpha =  .35 # used to multiply penalty terms.
-l1_ratio =  .45  # a penalty function var
+alpha =  .35 # change this value for each run. This is used to multiply penalty terms.
+l1_ratio =  .45  # change this value for each run. This var is a penalty value.
+
 # This example uses the ElasticNet model. 
 # It's a linear regression model with combined L1 and L2 priors as regularizer
 
@@ -167,7 +170,8 @@ with mlflow.start_run():
     print("  RMSE: %s" % rmse)
     print("  MAE: %s" % mae)
     print("  R2: %s" % r2)
-
+    
+    # log vars of interest to be tracked and listed by MLflow
     mlflow.log_param("alpha", alpha)
     mlflow.log_param("l1_ratio", l1_ratio)
     mlflow.log_metric("rmse", rmse)
@@ -188,7 +192,7 @@ with mlflow.start_run():
         mlflow.sklearn.log_model(lr, "model")
 
 
-# for each run, above metrics will be saved in model's local directory. 
+# for each run, above metrics will be saved in model's local directory where it will be picked up by MLflow
 ```
 
     Elasticnet model (alpha=0.350000, l1_ratio=0.450000):
@@ -211,7 +215,7 @@ with mlflow.start_run():
 
 # http://localhost:5000
         
-# you should see a dashboard similar to the one below but your content will vary.
+# you should see a dashboard similar to the one in the image below but your content will vary.
 
 # ![title](img/mbitar-mflow-dash.jpg)
 ```
@@ -239,4 +243,3 @@ mlflow is feature-packed. If you are not using an MLops tool, you can enjoy subs
 My next MLops guide will cover remote MLflow deployment and touch on some of the tool's more advanced features to support cloud and team collaboration. 
 
 Thank you.
-Michael Bitar
