@@ -6,6 +6,8 @@
 
 This is a getting started guide to help deploy MLflow locally on a Macbook. 
 
+![title](img/mlflow-logo-black.png)
+
 If you are a machine learning developer like me, you typically spend most of your time experimenting with parameters and code on your local workstation using your favorite IDE or Jupyter Notebooks. In the past, I would use a spreadsheet to track my ML experiments. That was not fun.
 
 The ML stack was begging for a toolchain that can bring DevOps-like functionality to ML development.  This led to the rise of tools referred to loosely as MLOps tools. One of those tools that's gaining traction is MLflow.
@@ -217,7 +219,6 @@ with mlflow.start_run():
         
 # you should see a dashboard similar to the one in the image below but your content will vary.
 
-# ![title](img/mbitar-mflow-dash.jpg)
 ```
 
 ![title](img/mbitar-mflow-dash.jpg)
