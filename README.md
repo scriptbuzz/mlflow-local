@@ -206,7 +206,7 @@ with mlflow.start_run():
 
 # http://localhost:5000
         
-# you should see a dashboard similar to the one in the image below but your content will vary.
+# you should see a dashboard similar to the one in the image below but your content will vary. You can sort on performance metrics to select the experemint with more promise and inspect its detailed metadata to determine which paramaters and hyperparamaters contributed to improved metrics. You can also inspect model metadata and register models of interest to share it with other developers on your team. 
 
 ```
 
