@@ -51,7 +51,7 @@ LET'S GET STARTED! You can use this Jupyter Notebook as your starting point. Mak
     Requirement already satisfied: cloudpickle in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (2.1.0)
     Requirement already satisfied: querystring-parser in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (1.2.4)
     Requirement already satisfied: requests>=2.17.3 in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (2.28.1)
-  ...
+    [content removed to shorten log output]
     Requirement already satisfied: itsdangerous>=2.0 in /Users/user/miniforge3/lib/python3.9/site-packages (from Flask->mlflow) (2.1.2)
     Requirement already satisfied: Werkzeug>=2.2.0 in /Users/user/miniforge3/lib/python3.9/site-packages (from Flask->mlflow) (2.2.1)
     Requirement already satisfied: Jinja2>=3.0 in /Users/user/miniforge3/lib/python3.9/site-packages (from Flask->mlflow) (3.1.2)
