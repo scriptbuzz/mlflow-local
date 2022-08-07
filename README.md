@@ -205,8 +205,10 @@ with mlflow.start_run():
 # from your browser, open the mflow dashboard using below url (withour hashtag)
 
 # http://localhost:5000
-        
-# you should see a dashboard similar to the one in the image below but your content will vary. 
+```  
+
+```python
+you should see a dashboard similar to the one in the image below but your content will vary. 
 You can sort on performance metrics to select the experemint with more promise and inspect its 
 detailed metadata to determine which paramaters and hyperparamaters contributed to improved 
 metrics. You can also inspect model metadata and register models of interest to share it with 
