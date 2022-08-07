@@ -6,7 +6,7 @@
 
 This is a getting started guide to help deploy MLflow locally on a Macbook. 
 
-![title](img/mlflow-logo-black.png)
+![mflow logo](img/mlflow-logo-black.png)
 
 If you are a machine learning developer like me, you typically spend most of your time experimenting with parameters and code on your local workstation using your favorite IDE or Jupyter Notebooks. In the past, I would use a spreadsheet to track my ML experiments. That was not fun.
 
