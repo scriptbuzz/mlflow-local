@@ -4,7 +4,7 @@
 ### By Michael Bitar ###
 
 
-This is a getting started guide to help deploy MLflow locally on a Macbook. 
+This is a getting started guide to help deploy MLflow locally on a Macbook. But the concepts are similar in a Windows environment. 
 
 ![mflow logo](img/mlflow-logo-black.png)
 
