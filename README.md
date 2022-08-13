@@ -195,14 +195,14 @@ with mlflow.start_run():
 
 ```python
 # when done, open a terminal and go to your projects local working 
-# directory and below command (withour hashtag)
+# directory and below command (without the hashtag)
 
 # mlflow ui
 ```
 
 
 ```python
-# from your browser, open the mflow dashboard using below url (withour hashtag)
+# from your browser, open the mflow dashboard using below url (without the hashtag)
 
 # http://localhost:5000
 ```  
