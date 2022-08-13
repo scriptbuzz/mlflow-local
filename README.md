@@ -20,7 +20,7 @@ In this guide I will walk you thru how I deployed MLflow on my local macbook. La
 
 ### LET'S GET STARTED! ### 
 
-You can use this Jupyter Notebook as your starting point. Make sure you have access to the internet. 
+You can use this Jupyter Notebook as your starting point. Make sure you have access to the internet. You can install MLflow from your terminal window or from a Jupyter notebook code cell. 
 
 
 
@@ -29,41 +29,6 @@ You can use this Jupyter Notebook as your starting point. Make sure you have acc
 
 !pip install mlflow
 ```
-
-    Requirement already satisfied: mlflow in /Users/user/miniforge3/lib/python3.9/site-packages (1.27.0)
-    Requirement already satisfied: numpy in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (1.22.4)
-    Requirement already satisfied: scipy in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (1.9.0)
-    Requirement already satisfied: alembic in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (1.8.1)
-    Requirement already satisfied: databricks-cli>=0.8.7 in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (0.17.0)
-    Requirement already satisfied: gitpython>=2.1.0 in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (3.1.27)
-    Requirement already satisfied: sqlalchemy>=1.4.0 in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (1.4.39)
-    Requirement already satisfied: importlib-metadata!=4.7.0,>=3.7.0 in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (4.12.0)
-    Requirement already satisfied: gunicorn in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (20.1.0)
-    Requirement already satisfied: packaging in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (21.3)
-    Requirement already satisfied: pandas in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (1.4.3)
-    Requirement already satisfied: sqlparse>=0.3.1 in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (0.4.2)
-    Requirement already satisfied: pytz in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (2022.1)
-    Requirement already satisfied: docker>=4.0.0 in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (5.0.3)
-    Requirement already satisfied: click>=7.0 in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (8.1.3)
-    Requirement already satisfied: prometheus-flask-exporter in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (0.20.3)
-    Requirement already satisfied: entrypoints in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (0.4)
-    Requirement already satisfied: Flask in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (2.2.1)
-    Requirement already satisfied: pyyaml>=5.1 in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (6.0)
-    Requirement already satisfied: protobuf>=3.12.0 in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (3.19.4)
-    Requirement already satisfied: cloudpickle in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (2.1.0)
-    Requirement already satisfied: querystring-parser in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (1.2.4)
-    Requirement already satisfied: requests>=2.17.3 in /Users/user/miniforge3/lib/python3.9/site-packages (from mlflow) (2.28.1)
-    [content removed to shorten log output]
-    Requirement already satisfied: itsdangerous>=2.0 in /Users/user/miniforge3/lib/python3.9/site-packages (from Flask->mlflow) (2.1.2)
-    Requirement already satisfied: Werkzeug>=2.2.0 in /Users/user/miniforge3/lib/python3.9/site-packages (from Flask->mlflow) (2.2.1)
-    Requirement already satisfied: Jinja2>=3.0 in /Users/user/miniforge3/lib/python3.9/site-packages (from Flask->mlflow) (3.1.2)
-    Requirement already satisfied: setuptools>=3.0 in /Users/user/miniforge3/lib/python3.9/site-packages (from gunicorn->mlflow) (63.2.0)
-    Requirement already satisfied: pyparsing!=3.0.5,>=2.0.2 in /Users/user/miniforge3/lib/python3.9/site-packages (from packaging->mlflow) (3.0.9)
-    Requirement already satisfied: python-dateutil>=2.8.1 in /Users/user/miniforge3/lib/python3.9/site-packages (from pandas->mlflow) (2.8.2)
-    Requirement already satisfied: prometheus-client in /Users/user/miniforge3/lib/python3.9/site-packages (from prometheus-flask-exporter->mlflow) (0.14.1)
-    Requirement already satisfied: smmap<6,>=3.0.1 in /Users/user/miniforge3/lib/python3.9/site-packages (from gitdb<5,>=4.0.1->gitpython>=2.1.0->mlflow) (5.0.0)
-    Requirement already satisfied: MarkupSafe>=2.0 in /Users/user/miniforge3/lib/python3.9/site-packages (from Jinja2>=3.0->Flask->mlflow) (2.1.1)
-
 
 
 ```python
