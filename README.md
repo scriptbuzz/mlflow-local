@@ -177,7 +177,9 @@ with mlflow.start_run():
 you should see a dashboard similar to the one in the image below but your content will vary. 
 You can sort columns such as performance metrics to select the experemint with more promise and inspect its 
 detailed metadata to determine which paramaters and hyperparamaters contributed to improved 
-metrics. You can also inspect model metadata and register models of interest to share it with 
+metrics. 
+
+You can also inspect model metadata and register models of interest to share it with 
 other developers on your team. 
 
 
@@ -199,8 +201,8 @@ other developers on your team.
 
 ![title](img/mbitar-mflow-dash-artifacts.jpg)
 
-mlflow is feature-packed. If you are not using an MLops tool, you can enjoy substantial gains in productivity by simply by using it's basic features. Once you feel comfortable with the basics, you can exapnd your MLflow deployment. 
+MLflow is feature-packed. If you are not using an MLops tool, consider using one. You will enjoy substantial gains in productivity by using local features alone. Once you feel comfortable with the basics, you can exapnd your MLflow deployment to the cloud and to the rest of your ML team.
 
-My next MLops guide will cover remote MLflow deployment and touch on some of the tool's more advanced features to support cloud and team collaboration. 
+My next MLops guide will cover remote MLflow deployment and will touch on some of the tool's more advanced features to support cloud and team collaboration. 
 
 Thank you.
