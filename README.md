@@ -48,7 +48,6 @@ import mlflow
 import mlflow.sklearn
 ```
 
-
 ```python
 import logging
 
@@ -57,7 +56,6 @@ import logging
 logging.basicConfig(level=logging.WARN)
 logger = logging.getLogger(__name__)
 ```
-
 
 ```python
 # define evaluation metrics. In this case I will select RMSE, MAE, R2 scores
@@ -79,6 +77,7 @@ warnings.filterwarnings("ignore")
 np.random.seed(40)
 
 # Load the sample dataset csv file from this URL
+
 csv_url = (
     "http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv"
 )
@@ -106,15 +105,12 @@ test_y = test[["quality"]]
 ```python
 # Run below code cell multiple times each with a different alpha and l1_ratio numbers using 
 # values between 0 and 1. Each run will be tracked and listed in the MLflow dashboard.
-# We will be usng the ElasticNet model in this example. 
-
-# ElasticNet link: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html
+# We will be using the ElasticNet model in this example. 
+# It's a linear regression model with combined L1 and L2 priors as regularizers
 
 alpha =  .35 # change this value for each run. This is used to multiply penalty terms.
 l1_ratio =  .45  # change this value for each run. This var is a penalty value.
 
-# This example uses the ElasticNet model. 
-# It's a linear regression model with combined L1 and L2 priors as regularizer
 
 with mlflow.start_run():
     lr = ElasticNet(alpha=alpha, l1_ratio=l1_ratio, random_state=42)
@@ -138,12 +134,12 @@ with mlflow.start_run():
 
     tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 
-    # Model registry does not work with file store
     if tracking_url_type_store != "file":
 
         # Register the model
         # There are other ways to use the Model Registry, which depends on the use case,
-        # please refer to the doc for more information:
+        # please refer to docs for more information:
+        #
         # https://mlflow.org/docs/latest/model-registry.html#api-workflow
         mlflow.sklearn.log_model(lr, "model", registered_model_name="ElasticnetWineModel")
     else:
@@ -161,8 +157,8 @@ with mlflow.start_run():
 
 
 ```python
-# when done, open a terminal and go to your projects local working 
-# directory and below command (without the hashtag)
+# when done, open a terminal and go to your project's local working 
+# directory and enter below command (without the hashtag)
 
 # mlflow ui
 ```
@@ -174,10 +170,10 @@ with mlflow.start_run():
 # http://localhost:5000
 ```  
 
-you should see a dashboard similar to the one in the image below but your content will vary. 
+You should see a dashboard similar to the one in the image below but your content may vary. 
 You can sort columns such as performance metrics to select the experemint with more promise and inspect its 
 detailed metadata to determine which paramaters and hyperparamaters contributed to improved 
-metrics. 
+model performance the most.
 
 You can also inspect model metadata and register models of interest to share it with 
 other developers on your team. 
@@ -201,7 +197,7 @@ other developers on your team.
 
 ![title](img/mbitar-mflow-dash-artifacts.jpg)
 
-MLflow is feature-packed. If you are not using an MLops tool, consider using one. You will enjoy substantial gains in productivity by using local features alone. Once you feel comfortable with the basics, you can exapnd your MLflow deployment to the cloud and to the rest of your ML team.
+MLflow is feature-packed. If you are not using an MLops tool, consider using MLflow. You will enjoy substantial gains in productivity by using local features alone. Once you feel comfortable with the basics of MLflow, you can exapnd your MLflow deployment to the cloud and to the rest of your ML team.
 
 My next MLops guide will cover remote MLflow deployment and will touch on some of the tool's more advanced features to support cloud and team collaboration. 
 
