@@ -8,17 +8,19 @@ This is a getting started guide to help deploy MLflow locally on a Macbook.
 
 ![mflow logo](img/mlflow-logo-black.png)
 
-If you are a machine learning developer like me, you typically spend most of your time experimenting with parameters and code on your local workstation using your favorite IDE or Jupyter Notebooks. In the past, I would use a spreadsheet to track my ML experiments. That was not fun.
+If you are an MLops engineer like me, you typically spend most of your time experimenting with parameters, hyerparameters, preprocesing, and code changes on your local workstation using your favorite IDE or Jupyter Notebooks. In the past, I would use a spreadsheet to track my ML experiments. That was not fun.
 
-The ML stack was begging for a toolchain that can bring DevOps-like functionality to ML development.  This led to the rise of tools referred to loosely as MLOps tools. One of those tools that's gaining traction is MLflow.
+The ML stack was begging for a toolchain that can bring DevOps-like functionality to ML development.  This led to the rise of tools referred to loosely as MLOps tools. One of those tools that's gaining traction is an open source tool called MLflow.
 
-MLflow is an open source framework to help organize machine learning development workflows by tracking experiments, packaging code into reproducible executions, facilitating collaboration, and deploying models. 
+MLflow is an open source framework to help organize machine learning development workflows by tracking ML experiments, packaging code into reproducible executions, versioning model metadata, facilitating collaboration, and deploying models. 
 
-MLflow can be deployed in many configurations. If you are developing locally most of the time and don't have the need for a central repo MLflow can be installed locally on your laptop so you can track your experiments and never have to guess again if you tried certain parameters or not and what was the resulting ML model performance. 
+MLflow can be deployed in many configurations. If you are developing locally most of the time and don't have the need for a central repo, MLflow can be installed locally on your laptop so you can track your experiments and never have to guess again if you tried certain parameters or not and what was the resulting ML model performance. 
 
 In this guide I will walk you thru how I deployed MLflow on my local macbook. Later, I will publish guides on more advanced setups such as using a cloud-hosted resources to support team collaboration and for higher availability, scalability, and security. 
 
-LET'S GET STARTED! You can use this Jupyter Notebook as your starting point. Make sure you have access to the internet. 
+### LET'S GET STARTED! ### 
+
+You can use this Jupyter Notebook as your starting point. Make sure you have access to the internet. 
 
 
 
