@@ -1,7 +1,7 @@
 
-# Deploy MLFlow To Your Local Workstation and Track Your ML Experiments
+## Deploy MLFlow To Your Local Workstation and Track Your ML Experiments ##
 
-## By Michael Bitar
+### By Michael Bitar ###
 
 
 This is a getting started guide to help deploy MLflow locally on a Macbook. 
